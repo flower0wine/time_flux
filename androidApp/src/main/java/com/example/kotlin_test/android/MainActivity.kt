@@ -15,14 +15,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.kotlin_test.getWallpaperManager
 import com.example.kotlin_test.initWallpaperManager
+import com.example.kotlin_test.initAdSkipManager
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // 初始化壁纸管理器
+        // 初始化管理器
         initWallpaperManager(this)
+        initAdSkipManager(this)
         
         setContent {
             MyApplicationTheme {
@@ -30,9 +32,32 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    WallpaperScreen()
+                    MainScreen()
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun MainScreen() {
+    var selectedTab by remember { mutableStateOf(0) }
+    val tabs = listOf("广告跳过", "壁纸设置")
+    
+    Column(modifier = Modifier.fillMaxSize()) {
+        TabRow(selectedTabIndex = selectedTab) {
+            tabs.forEachIndexed { index, title ->
+                Tab(
+                    selected = selectedTab == index,
+                    onClick = { selectedTab = index },
+                    text = { Text(title) }
+                )
+            }
+        }
+        
+        when (selectedTab) {
+            0 -> AdSkipScreen()
+            1 -> WallpaperScreen()
         }
     }
 }

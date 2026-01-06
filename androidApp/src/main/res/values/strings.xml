@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Time Flux</string>
+    <string name="accessibility_service_description">自动跳过应用开屏广告。\n\n此服务会监听屏幕内容，自动识别并点击"跳过"、"关闭"等按钮，帮助您快速跳过广告。\n\n不会收集或上传任何个人信息。</string>
+    <string name="service_not_enabled">无障碍服务未启用</string>
+    <string name="service_enabled">服务已启用</string>
+    <string name="open_settings">打开设置</string>
+    <string name="skip_records">跳过记录</string>
+    <string name="rules_management">规则管理</string>
+    <string name="add_rule">添加规则</string>
+    <string name="edit_rule">编辑规则</string>
+    <string name="delete_rule">删除规则</string>
+    <string name="rule_name">规则名称</string>
+    <string name="package_name">应用包名</string>
+    <string name="keywords">关键词</string>
+    <string name="enabled">启用</string>
+    <string name="priority">优先级</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="clear_records">清空记录</string>
+    <string name="no_records">暂无跳过记录</string>
+    <string name="total_skipped">已跳过 %d 次广告</string>
+</resources>
